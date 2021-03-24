@@ -26,7 +26,7 @@ export class IonicInputMaskDirective {
    * Listener para mudança de valor do input
    * @param event
    */
-  onInputChange(event) {
+  onInputChange(event: any) {
     let value = event.target.value,
       pattern = this.pattern;
     if (event.keyIdentifier === 'U+0008' || event.keyCode === 8 || event.key === 'Backspace') {
