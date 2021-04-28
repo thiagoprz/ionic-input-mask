@@ -4,7 +4,7 @@ import { NgModel } from "@angular/forms";
 @Directive({
   selector: '[mask]',
   host: {
-    '(keypress)': 'onInputChange($event)'
+    '(keydown)': 'onInputChange($event)'
   },
   providers: [NgModel]
 })
