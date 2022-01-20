@@ -1,13 +1,13 @@
 {
   "name": "@thiagoprz/ionic-input-mask",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mask for ion-input",
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@angular/common": "^11.2.4 || ~10.0.0",
-    "@angular/core": "^11.2.4 || ~10.0.0"
+    "@angular/common": "^13.0.0 || ^11.2.4 || ~10.0.0",
+    "@angular/core": "^13.0.0 || ^11.2.4 || ~10.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
