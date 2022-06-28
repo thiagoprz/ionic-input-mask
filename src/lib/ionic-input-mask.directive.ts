@@ -4,7 +4,7 @@ import { NgModel } from "@angular/forms";
 @Directive({
   selector: '[mask]',
   host: {
-    '(keydown)': 'onInputChange($event)'
+    '(keydown)': 'onKeyDown($event)'
   },
   providers: [NgModel]
 })
@@ -26,7 +26,7 @@ export class IonicInputMaskDirective {
    * Listener para mudança de valor do input
    * @param event
    */
-  onInputChange(event: any) {
+  onKeyDown(event: any) {
     let value = event.target.value,
       pattern = this.pattern;
     if (event.keyIdentifier === 'U+0008' || event.keyCode === 8 || event.key === 'Backspace') {
@@ -41,16 +41,8 @@ export class IonicInputMaskDirective {
         }
       }
     } else {
-      let maskIndex = value.length,
-        formatted = '';
-      if (value.length === 1 && value !== pattern[0]) {
-        //apply leading formatting
-        maskIndex = 0;
-        while (maskIndex < pattern.length && pattern[maskIndex] !== '*') {
-          formatted += pattern[maskIndex];
-          maskIndex++;
-        }
-      }
+      let maskIndex = value.length;
+      let formatted = '';
       formatted += value;
       if (maskIndex < pattern.length) {
         //apply trailing formatting
